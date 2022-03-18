@@ -1,0 +1,129 @@
+.container{
+    width: 100%;
+
+}
+
+.headings{
+    margin: 30px 10px;
+    padding: 0px;
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.options{
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.features{
+    display:flex;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: gray;
+    border-radius: 16px;
+    padding: 30px 20px;
+    width: 150px;
+    background-image: linear-gradient(to right, yellow, orange)
+}
+
+.feature-text{
+    width: 100%;
+    text-align: center;
+}
+
+.features:hover {
+    cursor: pointer;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.input-box{
+    border-bottom: gray 1px solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 300px;
+    padding: 20px 10px;
+
+}
+
+.input-box:focus{
+    border-bottom: gray 1px solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    font-size: 20px;
+}
+
+
+.add-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 2em; 
+    color: rgb(235, 113, 14);
+    background-image: linear-gradient(to right, black, purple)
+}
+
+.add-button:hover{
+    cursor: pointer;
+}
+
+.inner-task-li{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    padding: 0px 30%;
+}
+
+.checkbox{
+    width: 1em;
+    height: 1em;
+}
+
+.checkbox:hover{
+    cursor: pointer;
+}
+.delete-button:hover{
+
+    cursor: pointer;
+}
+
+.to-do-task{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    text-align: left;
+    margin-left:  10px;
+    margin-right: 10px;
+}
+
+.task-ul{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
+
+@media screen and (max-width: 950px) {
+    .inner-task-li{
+        padding: 0px 5%;
+    }
+    
+}
+
+.completed-task{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    text-align: left;
+    margin-left:  10px;
+    margin-right: 10px;
+    text-decoration: line-through;
+}
