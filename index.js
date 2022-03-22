@@ -3,6 +3,7 @@
 window.type = null;
 window.to_do_list = new LinkedList("to_do_list");
 window.completed_items = new LinkedList("completed_items");
+var dark_mode = false;
 const onClickElement = document.getElementById("onClickElement");
 
 function displayTextBox(type) {
@@ -135,7 +136,7 @@ function displayAddItem() {
     inputText.type = "text";
     inputText.id = "task";
     inputText.required = true;
-
+    inputText.placeholder = "Type your task here";
     const addButton = document.createElement("button");
     addButton.className = "add-button";
     addButton.innerText = "+";
@@ -147,6 +148,16 @@ function displayAddItem() {
 }
 
 function darkMode(){
+    let theme_button = document.getElementsByName("theme_button")[0];
+    if (!window.dark_mode){
+	    window.dark_mode = true;
+	    theme_button.innerText = "Light mode";
+    }
+    else{
+	    window.dark_mode = false;
+	    theme_button.innerText = "Dark mode";
+    }
+
     let element = document.body;
     element.classList.toggle("dark-mode")
 }

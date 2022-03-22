@@ -127,3 +127,8 @@
     margin-right: 10px;
     text-decoration: line-through;
 }
+
+.dark-mode{
+    background-color: #000000;
+    color: #FFFFFF;
+}
