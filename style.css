@@ -83,6 +83,7 @@
     display: flex;
     align-items: center;
     padding: 0px 30%;
+    position: relative;
 }
 
 .checkbox{
@@ -93,6 +94,8 @@
 .checkbox:hover{
     cursor: pointer;
 }
+
+
 .delete-button:hover{
 
     cursor: pointer;
@@ -128,7 +131,42 @@
     text-decoration: line-through;
 }
 
+.dark-mode-button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
 .dark-mode{
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #121212;
+    color: #ffffffce;
+    
+}
+
+.swipe-left-animation{
+    animation-name: slide-left;
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+    text-decoration: line-through;
+}
+
+.swipe-right-animation{
+    animation-name: slide-right;
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+
+}
+
+@keyframes slide-right{
+    0% {left: 0px;}
+    50% {left: 200px;}
+    100% {left: 400px;}
+}
+
+@keyframes slide-left{
+    0% {left: 0px}
+    50% {left: -200px}
+    100% {left: -400px}
 }

@@ -60,34 +60,47 @@ function displayCompletedItems() {
     onClickElement.appendChild(task_ul);
 }
 
-function clearOnClickElement(){
+function clearOnClickElement() {
     onClickElement.innerHTML = "";
 }
 
-function moveToCompleted(){
+function moveToCompleted() {
     let id = this.id;
     id = parseInt(id.split(" ")[1]);
-    const completed_item = window.to_do_list.remove(id-1);
-    window.completed_items.add(completed_item.element);
-    displayToDoItems();
+    const listItem = this.parentElement;
+    // console.log(listItem);
+    listItem.classList.add("swipe-right-animation");
+    // console.log(listItem.className);
+    setTimeout(() => {
+        const completed_item = window.to_do_list.remove(id - 1);
+        window.completed_items.add(completed_item.element);
+        displayToDoItems();
+    }, 2000)
+    // ();
 
 }
 
-function deleteFromList(){
+function deleteFromList() {
     let id = this.id
     id = parseInt(id.split(" ")[1]);
-    if (window.type === "displayToDoItems"){
-        window.to_do_list.remove(id-1);
-        displayToDoItems();
-    }
-    else{
-        window.completed_items.remove(id-1);
-        displayCompletedItems();
-    }
-    
+    const listItem = this.parentElement;
+    listItem.classList.add("swipe-left-animation");
+
+    setTimeout(() => {
+        if (window.type === "displayToDoItems") {
+            window.to_do_list.remove(id - 1);
+            displayToDoItems();
+        }
+        else {
+            window.completed_items.remove(id - 1);
+            displayCompletedItems();
+        }
+    }, 2000)
+
+
 }
 
-function displayToDoItems() {  
+function displayToDoItems() {
     clearOnClickElement();
     let to_do_list_copy = window.to_do_list.head;
     const task_ul = document.createElement("ul");
@@ -147,15 +160,15 @@ function displayAddItem() {
     onClickElement.appendChild(form);
 }
 
-function darkMode(){
-    let theme_button = document.getElementsByName("theme_button")[0];
-    if (!window.dark_mode){
-	    window.dark_mode = true;
-	    theme_button.innerText = "Light mode";
+function darkMode() {
+    let theme_button = document.getElementById("theme_button");
+    if (!window.dark_mode) {
+        window.dark_mode = true;
+        theme_button.innerText = "Light mode";
     }
-    else{
-	    window.dark_mode = false;
-	    theme_button.innerText = "Dark mode";
+    else {
+        window.dark_mode = false;
+        theme_button.innerText = "Dark mode";
     }
 
     let element = document.body;
